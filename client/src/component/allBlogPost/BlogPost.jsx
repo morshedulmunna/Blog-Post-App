@@ -9,7 +9,7 @@ const BlogPost = () => {
       <div className="catagory">
         <div className="button">
           <Link to="/details">
-            <button>CREATE BLOG POST</button>
+            <button>CREATE BLOG</button>
           </Link>
         </div>
         <p>All Catagory</p>

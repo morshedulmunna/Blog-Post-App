@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import Footer from "./component/footer/Footer";
 
 import Navbar from "./component/navbar/Navbar";
 import CreateBlog from "./pages/createBlog/CreateBlog";
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/details" element={<CreateBlog />} />
       </Routes>
+      <Footer />
     </>
   );
 }
