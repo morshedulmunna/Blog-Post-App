@@ -2,8 +2,6 @@ import React from "react";
 import "./Blog.scss";
 
 const Blog = (props) => {
-  console.log(props.blog);
-
   const { img, author, catagory, decription, title } = props.blog;
 
   return (

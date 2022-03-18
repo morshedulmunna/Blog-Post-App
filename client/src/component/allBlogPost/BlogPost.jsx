@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Blog from "../blog/Blog";
 import "./Blogpost.scss";
+import url from "../../../src/url";
 
 const BlogPost = () => {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
-    fetch("../../../src/fakeData.json")
+    fetch(url)
       .then((res) => res.json())
       .then((data) => setBlogs(data));
   }, []);
