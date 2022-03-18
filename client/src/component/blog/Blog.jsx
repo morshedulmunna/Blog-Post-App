@@ -1,22 +1,23 @@
 import React from "react";
 import "./Blog.scss";
 
-const Blog = () => {
+const Blog = (props) => {
+  console.log(props.blog);
+
+  const { img, author, catagory, decription, title } = props.blog;
+
   return (
     <>
       <div className="card">
-        <img
-          src="https://images.unsplash.com/photo-1498050108023-c5249f4df085"
-          alt=""
-        />
+        <img src={img} alt="" />
         <div className="cardHeader">
-          <span>Tech</span>
-          <h3>What is iPhone tecnology</h3>
-          <span>Author: morshedulmunna </span>
+          <span> {catagory} </span>
+          <h3>{title}</h3>
+          <span>Author: {author} </span>
         </div>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae,Lorem
-          ipsum dolor sit amet consectetur adipisicing elit. Harum, iste. fugit?
+          {decription.slice(0, 100)}
+          <a href="#"> ....see more</a>
         </p>
       </div>
     </>

@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Blog from "../blog/Blog";
 import "./Blogpost.scss";
 
 const BlogPost = () => {
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    fetch("../../../src/fakeData.json")
+      .then((res) => res.json())
+      .then((data) => setBlogs(data));
+  }, []);
+
   return (
     <div className="blogpage">
       <div className="catagory">
@@ -20,14 +28,9 @@ const BlogPost = () => {
         <p>Fashion</p>
       </div>
       <div className="allBlog">
-        <Blog />
-        <Blog />
-        <Blog />
-        <Blog />
-        <Blog />
-        <Blog />
-        <Blog />
-        <Blog />
+        {blogs.map((blog) => (
+          <Blog key={blog.id} blog={blog} />
+        ))}
       </div>
     </div>
   );
