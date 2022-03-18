@@ -1,0 +1,17 @@
+.header {
+  background: linear-gradient(to top, rgb(0, 0, 0, 0) 0%, rgb(0, 0, 0, 1) 100%),
+    url("https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg");
+  height: 50vh;
+  width: 100%;
+  background-size: cover;
+  .text__part {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+
+    h1 {
+      margin-top: 140px;
+    }
+  }
+}
