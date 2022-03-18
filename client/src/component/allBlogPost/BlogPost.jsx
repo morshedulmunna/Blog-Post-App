@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Blog from "../blog/Blog";
 import "./Blogpost.scss";
 
@@ -7,7 +8,9 @@ const BlogPost = () => {
     <div className="blogpage">
       <div className="catagory">
         <div className="button">
-          <button>CREATE BLOG POST</button>
+          <Link to="/details">
+            <button>CREATE BLOG POST</button>
+          </Link>
         </div>
         <p>All Catagory</p>
         <p>Music</p>
