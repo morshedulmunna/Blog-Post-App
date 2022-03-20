@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Footer from "./component/footer/Footer";
-
 import Navbar from "./component/navbar/Navbar";
+
 import CreateBlog from "./pages/createBlog/CreateBlog";
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
