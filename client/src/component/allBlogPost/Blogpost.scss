@@ -24,6 +24,22 @@
     @media screen and (max-width: 767px) {
       grid-template-columns: repeat(1, 1fr);
     }
+
+    button {
+      font-weight: 700;
+      font-size: 18px;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        color: #4e8ff8;
+      }
+    }
+    #no_blog {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   // Catagory Part

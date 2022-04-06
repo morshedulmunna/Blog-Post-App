@@ -1,0 +1,90 @@
+[
+  {
+    "id": "1",
+    "img": "https://images.unsplash.com/photo-1511379938547-c1f69419868d",
+    "catagory": "Music",
+    "title": "Music play Mp3 Player. Cool Song",
+    "author": "minhaz23",
+    "decription": "Lorem ipsum dolor sit amet Harum amet elit. Beatae,Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, iste. fugit?"
+  },
+  {
+    "id": "2",
+    "img": "https://images.unsplash.com/photo-1499415479124-43c32433a620?ixlib",
+    "catagory": "Music",
+    "title": "Music play Mp3 Player. Cool Song",
+    "author": "minhaz23",
+    "decription": "Lorem ipsum dolor sit amet Harum amet elit. Beatae,Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, iste. fugit?"
+  },
+  {
+    "id": "3",
+    "img": "https://images.unsplash.com/photo-1581044777550-4cfa60707c03",
+    "catagory": "Fashion",
+    "title": "China Girl Fashion Show ",
+    "author": "minch324",
+    "decription": "Chic Ambition is unique, memorable, and brandable name that would be perfect for your, fashion blog. The name speaks for itself and can help build customer trust in the fashion industry."
+  },
+  {
+    "id": "4",
+    "img": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhc2hpb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+    "catagory": "Fashion",
+    "title": "Cloth Color and Shine",
+    "author": "Mina34",
+    "decription": "When you think of Chic Ambition it makes you feel excited and ready to take on new fashion challenges."
+  },
+  {
+    "id": "5",
+    "img": "https://images.unsplash.com/photo-1506157786151-b8491531f063?ixlib",
+    "catagory": "Music",
+    "title": "Consequence of Sound",
+    "author": "sounds34",
+    "decription": "Consequence of Sound is a Chicago-based online publication that publishes content on music, television, and movies, including news, editorials, and reviews. In addition to music news and album reviews, you’ll also find tour dates and festival line-ups. In fact, the publication site also features the Festival Outlook micro-site, which is an online database and your go-to spot for learning about music festival news and rumors."
+  },
+  {
+    "id": "6",
+    "img": "https://images.unsplash.com/photo-1511379938547-c1f69419868d",
+    "catagory": "Music",
+    "title": "Music play Mp3 Player. Cool Song",
+    "author": "minhaz23",
+    "decription": "Lorem ipsum dolor sit amet Harum amet elit. Beatae,Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, iste. fugit?"
+  },
+  {
+    "id": "7",
+    "img": "https://images.unsplash.com/photo-1611042553484-d61f84d22784?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
+    "catagory": "fashion",
+    "title": "Atlantic-Pacific Design Culture.",
+    "author": "romni23",
+    "decription": "Atlantic-Pacific creator Blair Eadie has been in the fashion industry for several years now. Having worked for companies such as Tory Burch and Gap, she has the insider’s experience in how the"
+  },
+  {
+    "id": "8",
+    "img": "https://images.unsplash.com/photo-1621184455862-c163dfb30e0f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+    "catagory": "fashion",
+    "title": "Girl With Curves Design Culture.",
+    "author": "mimi23",
+    "decription": "Let’s face it—the body type of models is far from reality. Slim people do exist in real life, but there are women with bigger sizes who can look just as good. People come in all shapes and sizes, but many of us have been conditioned to believe that only one body type is ideal for fashion."
+  },
+  {
+    "id": "9",
+    "img": "https://images.unsplash.com/photo-1611558709798-e009c8fd7706?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=691&q=80",
+    "catagory": "fashion",
+    "title": "Grasie Mercedes Culture.",
+    "author": "mimi23",
+    "decription": "Multi-hyphenated creative Grasie Mercedes is not your usual fashion blogger. She is an actress, writer, filmmaker, director, and podcast host who also happens to have a rocking sense of style. Her website, simply named Grasie Mercedes, features her work in the entertainment industry. The blog section is where she posts about fashion, travel, beauty, and lifestyle. "
+  },
+  {
+    "id": "9",
+    "img": "https://images.unsplash.com/photo-1578632292335-df3abbb0d586?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+    "catagory": "fashion",
+    "title": "We Wore What People Hits Fashion.",
+    "author": "mimi23",
+    "decription": "We Wore What is one of those remarkable blogs that have found success as an online shop. Founder Danielle Bernstein started We Wore What in 2010 while still a student in New York City. A self-taught photographer, she started with photographing street fashion in her campus."
+  },
+  {
+    "id": "10",
+    "img": "https://images.unsplash.com/photo-1585951237318-9ea5e175b891?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "catagory": "movie",
+    "title": "Red Notice is mildly entertaining",
+    "author": "minu3",
+    "decription": "When an Interpol-issued Red Notice — the highest level warrant to hunt and capture the world’s most wanted— goes out, the FBI’s top profiler John Hartley (Dwayne Johnson) is on the case. His global pursuit finds him smack dab in the middle of a daring heist where he’s forced to partner with the world’s greatest art thief Nolan Booth (Ryan Reynolds) in order to catch the world’s most wanted art thief, “The Bishop” (Gal Gadot)."
+  }
+]

@@ -6,7 +6,6 @@ import Navbar from "../../component/navbar/Navbar";
 const Home = () => {
   return (
     <>
-      <Header />
       <BlogPost />
     </>
   );

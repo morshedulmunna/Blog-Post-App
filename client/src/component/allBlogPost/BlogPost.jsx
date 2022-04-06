@@ -2,13 +2,17 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Blog from "../blog/Blog";
 import "./Blogpost.scss";
-import url from "../../../src/url";
 
 const BlogPost = () => {
   const [blogs, setBlogs] = useState([]);
+  const [slc, setslc] = useState(5);
+
+  const handleSlcAll = () => {
+    setslc(blogs.length);
+  };
 
   useEffect(() => {
-    fetch(url)
+    fetch("fakeData.json")
       .then((res) => res.json())
       .then((data) => setBlogs(data));
   }, []);
@@ -29,9 +33,14 @@ const BlogPost = () => {
         <p>Fashion</p>
       </div>
       <div className="allBlog">
-        {blogs.map((blog) => (
+        {blogs.slice(0, slc).map((blog) => (
           <Blog key={blog.id} blog={blog} />
         ))}
+        {blogs.length !== slc ? (
+          <button onClick={handleSlcAll}>See All Blog Post.....</button>
+        ) : (
+          <h2 id="no_blog">No Blog Available Now</h2>
+        )}
       </div>
     </div>
   );
