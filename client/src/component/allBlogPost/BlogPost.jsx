@@ -4,19 +4,21 @@ import Blog from "../blog/Blog";
 import "./Blogpost.scss";
 
 const BlogPost = () => {
-  const [blogs, setBlogs] = useState([]);
   const [allBlogs, setAllBlogs] = useState([]);
+  const [blogs, setBlogs] = useState([]);
   const [slc, setslc] = useState(5);
 
   // see more button handler
   const handleSlcAll = () => {
-    setslc(blogs.length);
+    setslc(allBlogs.length);
   };
 
   // catagory handler
   const handleCatagory = (catagory) => {
     if (catagory === "all") {
-      console.log(setBlogs(allBlogs));
+      setBlogs([...allBlogs]);
+      // if you use else don't return
+      return;
     }
     const catagoryBlogs = allBlogs.filter(
       (blog) => blog.catagory.toLowerCase() === catagory.toLowerCase()
@@ -53,7 +55,7 @@ const BlogPost = () => {
         {blogs.slice(0, slc).map((blog) => (
           <Blog key={blog.id} blog={blog} />
         ))}
-        {blogs.length !== slc ? (
+        {allBlogs.length !== slc ? (
           <button onClick={handleSlcAll}>See All Blog Post.....</button>
         ) : (
           <h2 id="no_blog">No Blog Available Now</h2>
