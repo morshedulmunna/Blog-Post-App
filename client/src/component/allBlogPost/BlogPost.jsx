@@ -45,6 +45,7 @@ const BlogPost = () => {
         <p onClick={() => handleCatagory("Fashion")}>Fashion</p>
       </div>
       <div className="allBlog">
+        {/* toogle Open */}
         {open
           ? blogs
               .slice(0, slc)
