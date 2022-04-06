@@ -4,9 +4,11 @@ import initializeAppAuthentication from "../../firebase/firebaseInit";
 
 initializeAppAuthentication();
 const provider = new GoogleAuthProvider();
+
 const Login = () => {
   const handleClickGoogleLogin = () => {
     const auth = getAuth();
+
     signInWithPopup(auth, provider)
       .then((result) => {
         // const credential = GoogleAuthProvider.credentialFromResult(result);

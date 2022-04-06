@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import Blog from "../blog/Blog";
 import "./Blogpost.scss";
 import useDataLoad from "../../hooks/useDataLoad.js";
+import { BlogsData } from "../../App";
 
 const BlogPost = () => {
-  const [allBlogs, setAllBlogs] = useDataLoad();
+  const allBlogs = useContext(BlogsData);
+
   const [blogs, setBlogs] = useState([]);
-  const [slc, setslc] = useState(5);
+  const [slc, setslc] = useState(6);
   const [open, setOepen] = useState(false);
 
   // see more button handler
