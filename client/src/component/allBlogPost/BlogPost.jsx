@@ -5,16 +5,33 @@ import "./Blogpost.scss";
 
 const BlogPost = () => {
   const [blogs, setBlogs] = useState([]);
+  const [allBlogs, setAllBlogs] = useState([]);
   const [slc, setslc] = useState(5);
 
+  // see more button handler
   const handleSlcAll = () => {
     setslc(blogs.length);
   };
 
+  // catagory handler
+  const handleCatagory = (catagory) => {
+    if (catagory === "all") {
+      console.log(setBlogs(allBlogs));
+    }
+    const catagoryBlogs = allBlogs.filter(
+      (blog) => blog.catagory.toLowerCase() === catagory.toLowerCase()
+    );
+    setBlogs(catagoryBlogs);
+  };
+
+  // Data Load ==>
   useEffect(() => {
     fetch("fakeData.json")
       .then((res) => res.json())
-      .then((data) => setBlogs(data));
+      .then((data) => {
+        setAllBlogs(data);
+        setBlogs(data);
+      });
   }, []);
 
   return (
@@ -25,12 +42,12 @@ const BlogPost = () => {
             <button>CREATE BLOG</button>
           </Link>
         </div>
-        <p>All Catagory</p>
-        <p>Music</p>
-        <p>Movie</p>
-        <p>Sports</p>
-        <p>Tech</p>
-        <p>Fashion</p>
+        <p onClick={() => handleCatagory("all")}>All Catagory</p>
+        <p onClick={() => handleCatagory("music")}>Music</p>
+        <p onClick={() => handleCatagory("Movie")}>Movie</p>
+        <p onClick={() => handleCatagory("Sports")}>Sports</p>
+        <p onClick={() => handleCatagory("Tech")}>Tech</p>
+        <p onClick={() => handleCatagory("Fashion")}>Fashion</p>
       </div>
       <div className="allBlog">
         {blogs.slice(0, slc).map((blog) => (
