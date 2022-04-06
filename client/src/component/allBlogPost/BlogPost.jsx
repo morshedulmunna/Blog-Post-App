@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Blog from "../blog/Blog";
 import "./Blogpost.scss";
+import useDataLoad from "../../hooks/useDataLoad.js";
 
 const BlogPost = () => {
-  const [allBlogs, setAllBlogs] = useState([]);
+  const [allBlogs, setAllBlogs] = useDataLoad();
   const [blogs, setBlogs] = useState([]);
   const [slc, setslc] = useState(5);
+  const [open, setOepen] = useState(false);
 
   // see more button handler
   const handleSlcAll = () => {
@@ -23,18 +25,9 @@ const BlogPost = () => {
     const catagoryBlogs = allBlogs.filter(
       (blog) => blog.catagory.toLowerCase() === catagory.toLowerCase()
     );
+    setOepen(true);
     setBlogs(catagoryBlogs);
   };
-
-  // Data Load ==>
-  useEffect(() => {
-    fetch("fakeData.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setAllBlogs(data);
-        setBlogs(data);
-      });
-  }, []);
 
   return (
     <div className="blogpage">
@@ -52,13 +45,18 @@ const BlogPost = () => {
         <p onClick={() => handleCatagory("Fashion")}>Fashion</p>
       </div>
       <div className="allBlog">
-        {blogs.slice(0, slc).map((blog) => (
-          <Blog key={blog.id} blog={blog} />
-        ))}
+        {open
+          ? blogs
+              .slice(0, slc)
+              .map((blog) => <Blog key={blog.id} blog={blog} />)
+          : allBlogs
+              .slice(0, slc)
+              .map((blog) => <Blog key={blog.id} blog={blog} />)}
+
         {allBlogs.length !== slc ? (
           <button onClick={handleSlcAll}>See All Blog Post.....</button>
         ) : (
-          <h2 id="no_blog">No Blog Available Now</h2>
+          <h2 id="no_blog">No more available now</h2>
         )}
       </div>
     </div>
