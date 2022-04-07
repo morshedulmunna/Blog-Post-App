@@ -19,10 +19,11 @@
 
       img {
         width: 80%;
+        padding-bottom: 20px;
         // mobile
 
         @media screen and (max-width: 769px) {
-          width: 70%;
+          width: 100%;
         }
       }
 
@@ -37,6 +38,7 @@
         }
         > p {
           padding: 20px 50px 10px 0;
+          width: 100%;
 
           @media screen and (max-width: 375px) {
             padding: 20px 10px 10px 0;

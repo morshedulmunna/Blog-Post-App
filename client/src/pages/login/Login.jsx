@@ -36,7 +36,7 @@ const Login = () => {
         <div className="form_wrapper">
           <img src={image} alt="" />
           <div className="form">
-            <h1>Wellcome Back :)</h1>
+            <h1>Wellcome Back </h1>
             <p>
               To Keep connected with us. Please login your personal information
               by email address and password or you can log in with google,
