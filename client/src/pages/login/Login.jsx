@@ -1,13 +1,7 @@
 import "./Login.scss";
 import image from "../../images/undraw_Deliveries_2r4y.png";
-import { ImGoogle2 } from "react-icons/im";
-import { GrFacebook } from "react-icons/gr";
-import {
-  AiFillTwitterSquare,
-  AiOutlineLock,
-  AiOutlineMail,
-} from "react-icons/ai";
-import { FaGithubSquare } from "react-icons/fa";
+import { AiOutlineLock, AiOutlineMail } from "react-icons/ai";
+import { FaTwitter, FaFacebookF, FaGoogle, FaGithub } from "react-icons/fa";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import initializeAppAuthentication from "../../firebase/firebaseInit";
 
@@ -65,16 +59,24 @@ const Login = () => {
                 <button>Forget Password?</button>
               </div>
               <div className="logIn_acc">
-                <button>Login Now</button>
+                <button id="login">Login Now</button>
                 <button>Create Account</button>
               </div>
               <p>Or you can join with</p>
             </div>
             <div className="icons">
-              <ImGoogle2 />
-              <GrFacebook />
-              <AiFillTwitterSquare />
-              <FaGithubSquare />
+              <i>
+                <FaFacebookF />
+              </i>
+              <i>
+                <FaGoogle />
+              </i>
+              <i>
+                <FaGithub />
+              </i>
+              <i>
+                <FaTwitter />
+              </i>
             </div>
           </div>
         </div>

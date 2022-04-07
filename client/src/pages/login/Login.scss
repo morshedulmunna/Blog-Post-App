@@ -7,23 +7,40 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      margin-top: 4rem;
+      padding-bottom: 10rem;
       //   mobile
       //   flex-direction: column;
+
+      @media screen and (max-width: 769px) {
+        flex-direction: column;
+        padding: 0 2rem;
+      }
 
       img {
         width: 80%;
         // mobile
-        // width: 50%;
+
+        @media screen and (max-width: 769px) {
+          width: 70%;
+        }
       }
 
       .form {
         h1 {
           font-size: 65px;
           font-weight: 400;
+
+          @media screen and (max-width: 769px) {
+            font-size: 45px;
+          }
         }
         > p {
-          padding-top: 20px;
-          padding-bottom: 10px;
+          padding: 20px 50px 10px 0;
+
+          @media screen and (max-width: 375px) {
+            padding: 20px 10px 10px 0;
+          }
         }
 
         .input_box {
@@ -54,8 +71,11 @@
           .checkbox {
             display: flex;
             justify-content: space-between;
-            width: 60%;
+            width: 50%;
             margin-bottom: 10px;
+            @media screen and (max-width: 1225px) {
+              flex-direction: column;
+            }
 
             input {
               border-radius: 50%;
@@ -70,10 +90,59 @@
               border: none;
               cursor: pointer;
               font-size: 15px;
+              text-align: start;
+
+              @media screen and (max-width: 1225px) {
+                padding-top: 10px;
+              }
 
               &:hover {
                 color: blue;
               }
+            }
+          }
+        }
+
+        .logIn_acc {
+          #login {
+            margin-right: 2rem;
+          }
+          button {
+            background-color: #3023ea;
+            border: none;
+            color: #fff;
+            padding: 0.5rem 0.9rem;
+            margin: 10px 0px;
+            border-radius: 5px;
+            cursor: pointer;
+
+            &:hover {
+              background-color: #584cff;
+              transition: ease-in-out 0.3s;
+            }
+          }
+        }
+        p {
+          margin-bottom: 10px;
+        }
+
+        .icons {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 30%;
+
+          i {
+            padding: 0.3rem 0.6rem;
+            font-size: 20px;
+            padding-top: 10px;
+
+            &:hover {
+              color: #fff;
+              background-color: #3023ea;
+              cursor: pointer;
+              transition: ease-in-out 0.3s;
+              border-radius: 10px;
             }
           }
         }
