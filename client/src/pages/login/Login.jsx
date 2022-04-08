@@ -1,33 +1,27 @@
+import React, { useState } from "react";
 import "./Login.scss";
 import image from "../../images/undraw_Deliveries_2r4y.png";
 import { AiOutlineLock, AiOutlineMail } from "react-icons/ai";
-import { FaTwitter, FaFacebookF, FaGoogle, FaGithub } from "react-icons/fa";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import initializeAppAuthentication from "../../firebase/firebaseInit";
-
-initializeAppAuthentication();
-const provider = new GoogleAuthProvider();
+import {
+  FaTwitter,
+  FaFacebookF,
+  FaGoogle,
+  FaGithub,
+  FaUserCheck,
+} from "react-icons/fa";
+import handleClickGoogleLogin from "../../firebase/authHandler/GoogleHandle";
+import createAccount from "../../firebase/authHandler/createAccount";
 
 const Login = () => {
-  const handleClickGoogleLogin = () => {
-    const auth = getAuth();
+  const [userForm, setUserForm] = useState(true);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        // const credential = GoogleAuthProvider.credentialFromResult(result);
-        // const token = credential.accessToken;
-        // console.log(token);
-
-        // The signed-in user info.
-        const user = result.user;
-        console.log(user);
-      })
-      .catch((error) => {
-        // const errorCode = error.code;
-        // const errorMessage = error.message;
-        // const email = error.email;
-        const credential = GoogleAuthProvider.credentialFromError(error);
-      });
+  const handleEmail = (event) => {
+    setEmail(event.target.value);
+  };
+  const handlePassword = (event) => {
+    setPassword(event.target.value);
   };
 
   return (
@@ -43,32 +37,87 @@ const Login = () => {
               facebook, twitter or github
             </p>
             <div className="input_box">
-              <div className="email">
-                <AiOutlineMail />
-                <input type="Email" placeholder="Email" />
-              </div>
-              <div className="email">
-                <AiOutlineLock />
-                <input type="password" placeholder="Password" />
-              </div>
-              <div className="checkbox">
-                <div className="check">
-                  <input type="checkbox" />
-                  <label>Remember me</label>
+              <form>
+                {userForm ? (
+                  <>
+                    <div className="email">
+                      <AiOutlineMail />
+                      <input
+                        onBlur={handleEmail}
+                        type="Email"
+                        placeholder="Email"
+                      />
+                    </div>
+                    <div className="email">
+                      <AiOutlineLock />
+                      <input
+                        onBlur={handlePassword}
+                        type="password"
+                        placeholder="Password"
+                      />
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="email">
+                      <FaUserCheck />
+                      <input type="text" placeholder="Enter your Name" />
+                    </div>
+                    <div className="email">
+                      <AiOutlineMail />
+                      <input
+                        onBlur={handleEmail}
+                        type="Email"
+                        placeholder="Email"
+                      />
+                    </div>
+                    <div className="email">
+                      <AiOutlineLock />
+                      <input
+                        onBlur={handlePassword}
+                        type="password"
+                        placeholder="Password"
+                      />
+                    </div>
+                  </>
+                )}
+                <div className="checkbox">
+                  <div className="check">
+                    <input type="checkbox" />
+                    <label>Remember me</label>
+                  </div>
+                  <button>Forget Password?</button>
                 </div>
-                <button>Forget Password?</button>
-              </div>
-              <div className="logIn_acc">
-                <button id="login">Login Now</button>
-                <button>Create Account</button>
-              </div>
+                <div className="logIn_acc">
+                  <button
+                    onClick={(e) => {
+                      setUserForm(true);
+                      e.preventDefault();
+                    }}
+                    type="submit"
+                    id="login"
+                  >
+                    Login Now
+                  </button>
+                  <button
+                    onClick={(e) => {
+                      createAccount(email, password);
+                      setUserForm(false);
+                      e.preventDefault();
+                    }}
+                  >
+                    Create Account
+                  </button>
+                </div>
+              </form>
+
               <p>Or you can join with</p>
             </div>
             <div className="icons">
               <i>
                 <FaFacebookF />
               </i>
-              <i>
+              <i onClick={handleClickGoogleLogin}>
                 <FaGoogle />
               </i>
               <i>
