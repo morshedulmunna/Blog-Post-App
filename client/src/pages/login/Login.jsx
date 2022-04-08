@@ -16,6 +16,15 @@ const Login = () => {
   const [userForm, setUserForm] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(true);
+
+  //
+  // ::::::::::::::::::: Last Time Code Here
+  //
+  console.log(error);
+  //
+  // ::::::::::::::::::: Last Time Code Here
+  //
 
   const handleEmail = (event) => {
     setEmail(event.target.value);
@@ -69,6 +78,7 @@ const Login = () => {
                         onBlur={handleEmail}
                         type="Email"
                         placeholder="Email"
+                        required
                       />
                     </div>
                     <div className="email">
@@ -77,6 +87,7 @@ const Login = () => {
                         onBlur={handlePassword}
                         type="password"
                         placeholder="Password"
+                        required
                       />
                     </div>
                   </>
@@ -101,9 +112,9 @@ const Login = () => {
                   </button>
                   <button
                     onClick={(e) => {
-                      createAccount(email, password);
-                      setUserForm(false);
+                      createAccount(email, password, setError);
                       e.preventDefault();
+                      setUserForm(false);
                     }}
                   >
                     Create Account
