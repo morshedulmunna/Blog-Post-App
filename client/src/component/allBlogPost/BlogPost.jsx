@@ -14,7 +14,7 @@ const BlogPost = () => {
 
   // see more button handler
   const handleSlcAll = () => {
-    setslc(allBlogs.length);
+    setslc(allBlogs?.length);
   };
 
   // catagory handler
@@ -50,13 +50,13 @@ const BlogPost = () => {
         {/* toogle Open */}
         {open
           ? blogs
-              .slice(0, slc)
+              ?.slice(0, slc)
               .map((blog) => <Blog key={blog.id} blog={blog} />)
           : allBlogs
-              .slice(0, slc)
+              ?.slice(0, slc)
               .map((blog) => <Blog key={blog.id} blog={blog} />)}
 
-        {allBlogs.length !== slc ? (
+        {allBlogs?.length !== slc ? (
           <button onClick={handleSlcAll}>See All Blog Post.....</button>
         ) : (
           <h2 id="no_blog">No more available now</h2>
