@@ -35,7 +35,7 @@ const BlogPost = () => {
     <div className="blogpage">
       <div className="catagory">
         <div className="button">
-          <Link to="/details">
+          <Link to="/create-blog">
             <button>CREATE BLOG</button>
           </Link>
         </div>
