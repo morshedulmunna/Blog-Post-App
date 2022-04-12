@@ -6,6 +6,7 @@ import useDataLoad from "./hooks/useDataLoad";
 import CreateBlog from "./pages/createBlog/CreateBlog";
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
+import Signup from "./pages/signup/Signup";
 
 export const BlogsData = React.createContext();
 
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/details" element={<CreateBlog />} />
         </Routes>
         <Footer />

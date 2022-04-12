@@ -8,7 +8,6 @@ const useDataLoad = () => {
       .then((res) => res.json())
       .then((data) => {
         setAllBlogs(data);
-        setBlogs(data);
       });
   }, []);
 
