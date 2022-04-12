@@ -9,10 +9,11 @@ import {
   FaUserAstronaut,
 } from "react-icons/fa";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import auth from "../../firebase/firebaseInit";
 
 const Signup = () => {
+  const navigate = useNavigate();
   const [myError, setMyError] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -22,7 +23,6 @@ const Signup = () => {
 
   const handleCreateUser = (e) => {
     e.preventDefault();
-    console.log("user create");
 
     if (password !== confirmPassword) {
       setMyError("Password didn't Match");
@@ -30,6 +30,10 @@ const Signup = () => {
     }
     createUserWithEmailAndPassword(email, password);
   };
+
+  if (user) {
+    navigate("/");
+  }
 
   return (
     <div className="wrapper">

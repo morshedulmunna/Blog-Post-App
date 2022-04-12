@@ -3,11 +3,25 @@ import "./Login.scss";
 import image from "../../images/undraw_Deliveries_2r4y.png";
 import { AiOutlineLock, AiOutlineMail } from "react-icons/ai";
 import { FaTwitter, FaFacebookF, FaGoogle, FaGithub } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import auth from "../../firebase/firebaseInit";
 
 const Login = () => {
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+  const nagivate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const handleLogIn = (e) => {
+    e.preventDefault();
+    signInWithEmailAndPassword(email, password);
+  };
+
+  if (user) {
+    nagivate("/");
+  }
 
   return (
     <div className="wrapper">
@@ -22,27 +36,26 @@ const Login = () => {
               facebook, twitter or github
             </p>
             <div className="input_box">
-              <form>
-                <>
-                  <div className="email">
-                    <AiOutlineMail />
-                    <input
-                      onBlur={(event) => setEmail(event.target.value)}
-                      type="Email"
-                      placeholder="Email"
-                      required
-                    />
-                  </div>
-                  <div className="email">
-                    <AiOutlineLock />
-                    <input
-                      onBlur={(event) => setPassword(event.target.value)}
-                      type="password"
-                      placeholder="Password"
-                      required
-                    />
-                  </div>
-                </>
+              <form onSubmit={handleLogIn}>
+                <div className="email">
+                  <AiOutlineMail />
+                  <input
+                    onBlur={(event) => setEmail(event.target.value)}
+                    type="Email"
+                    placeholder="Email"
+                    required
+                  />
+                </div>
+                <div className="email">
+                  <AiOutlineLock />
+                  <input
+                    onBlur={(event) => setPassword(event.target.value)}
+                    type="password"
+                    placeholder="Password"
+                    required
+                  />
+                </div>
+                <p>{error?.message}</p>
                 <div className="checkbox">
                   <div className="check">
                     <input type="checkbox" />
